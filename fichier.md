@@ -26,13 +26,15 @@ L'objectif est d'intégrer la maquette d'un site de planification de vacance nom
 
 
 ### Difficultés : 
-
+- Gérer le menu pour l'adapter au mobile.
+j'ai utilisé les positions absolute et bidouillé, pas très fan, à ameliorer.
+- Logo de croissance incomplet.
 ### À faire :
-
+...
 ### Outils :
 
 - Virtual Studio Code.
-- Sass via le terminal.
+- Sass.
 - Autoprefixer.
 - Références HTML et CSS (MDN).
 - Bcp internet pour revoir cours et aller chercher les infos.
@@ -40,9 +42,15 @@ L'objectif est d'intégrer la maquette d'un site de planification de vacance nom
 ### Horaires :
 
 Mercredi 20 octobre
-- 17H15 à 20H15 :   03H00 HTML complet et SCSS NAV SEARCH
-- 22H10 à 22H55 :   00H45 SCSS FILTER RESULT POP
+- 17H15 à 20H15 :   03H00 HTML complet et SASS NAV SEARCH
+- 22H10 à 22H55 :   00H45 SASS FILTER RESULT POP...
 - TOTAL :           03H45
 
 Jeudi 21 octobre
-- 00H00 à 04H00 :   04H00 SCSS complet avec animations, reste media quiery à faire.
+- 00H00 à 04H00 :   04H00 SASS complet avec animations, reste MQ à faire
+- 14H45 à 17H30 :   02H45 Finalisation des MQ et du site
+- 17H30 à 18H00 :   00H30 Organisations des Dossiers/Fichiers SASS
+- TOTAL :           07H15
+
+Temps de travail
+- TOTAL :           11H00

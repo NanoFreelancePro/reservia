@@ -1,7 +1,53 @@
-/* FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
-/* font-family: 'Raleway', sans-serif; */
+/* UTILS */
 /* COLOR PAGE */
+/* MAPES */
+/* MIXINS */
+/* KEYFRAMES */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes thumb {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+/* BASES */
+/* FONTS */
+/* font-family: 'Raleway', sans-serif; */
+/* GENERAL SIZE */
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+ul {
+  padding-inline: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #000000;
+}
+a:hover {
+  color: #0065FC;
+}
+
+/* IMG du site */
 .pic--1 {
   background: url("../img/hosting/small/auberge_la_cannebiere.jpg") 50% 50%;
 }
@@ -48,42 +94,51 @@
   background: url("../img/activity/small/parc_longchamp.jpg") 50% 50%;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes thumb {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.05);
-  }
-}
-body {
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-}
-
-ul {
-  padding-inline: 0;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  list-style: none;
-  text-decoration: none;
-  color: #000000;
-}
-
+/* IMG du site avec MAPES et MIXINS dans .pic */
+/* LAYOUTS */
 /* NAV */
+#btn-inscription {
+  color: #0065FC;
+  font-weight: bold;
+}
+@media screen and (max-width: 1024px) {
+  #btn-inscription {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #btn-result {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    width: 48%;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #F2F2F2;
+  }
+  #btn-result:hover {
+    border-top: 0;
+    border-bottom: 3px solid #0065FC;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #btn-activity {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    width: 48%;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #F2F2F2;
+  }
+  #btn-activity:hover {
+    border-top: 0;
+    border-bottom: 3px solid #0065FC;
+  }
+}
+
 .nav {
   display: flex;
   justify-content: flex-end;
@@ -91,6 +146,11 @@ a {
   position: relative;
   width: 100%;
   height: 83px;
+}
+@media screen and (max-width: 1024px) {
+  .nav {
+    height: 200px;
+  }
 }
 .nav__logo {
   position: absolute;
@@ -113,11 +173,23 @@ a {
   width: 200px;
   height: 60px;
   padding-top: 20px;
+  color: #000000;
+}
+@media screen and (max-width: 1024px) {
+  .nav__menu--btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 .nav__menu--btn:hover {
   border-top: 3px solid #0065FC;
   color: #0065FC;
   font-weight: bold;
+}
+@media screen and (max-width: 1024px) {
+  .nav__menu--btn:hover {
+    border-top: 0;
+  }
 }
 
 /* SEARCH*/
@@ -125,12 +197,17 @@ a {
   margin: 20px 0;
   margin-left: 30px;
 }
+@media screen and (max-width: 480px) {
+  .search {
+    margin-left: 10px;
+  }
+}
 .search__title {
   font-size: 1.5em;
 }
 .search__bar {
   display: flex;
-  width: 600px;
+  width: auto;
   height: 50px;
 }
 .search__bar--icon {
@@ -147,6 +224,11 @@ a {
   font-size: 1.2em;
   font-weight: bold;
 }
+@media screen and (max-width: 1024px) {
+  .search__bar--area {
+    border-right: 0;
+  }
+}
 .search__bar--area:focus {
   border-style: none;
 }
@@ -157,6 +239,21 @@ a {
   font-size: 1.2em;
   border: 0;
   border-radius: 0 20px 20px 0;
+}
+.search__bar--btn .mobile {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .search__bar--btn {
+    width: 50px;
+    border-radius: 12px;
+  }
+  .search__bar--btn .mobile {
+    display: contents;
+  }
+  .search__bar--btn .comput {
+    display: none;
+  }
 }
 .search__bar--btn:hover {
   background-color: #3083ff;
@@ -175,9 +272,20 @@ a {
   font-size: 1em;
   font-weight: bold;
 }
+@media screen and (max-width: 480px) {
+  .filter {
+    margin-left: 10px;
+  }
+}
 .filter__title {
   width: 80px;
   padding-top: 18px;
+}
+@media screen and (max-width: 1024px) {
+  .filter__title {
+    width: 100%;
+    padding-bottom: 20px;
+  }
 }
 .filter__btn {
   cursor: pointer;
@@ -187,6 +295,11 @@ a {
   text-align: center;
   border: 1px solid #F2F2F2;
   border-radius: 30px;
+}
+@media screen and (max-width: 1024px) {
+  .filter__btn {
+    margin-bottom: 20px;
+  }
 }
 .filter__btn i {
   display: inline-block;
@@ -214,6 +327,7 @@ a {
   font-weight: lighter;
 }
 .filter__txt i {
+  float: left;
   margin-right: 15px;
   padding: 5px 9px;
   color: #0065FC;
@@ -231,15 +345,28 @@ a {
   margin-left: 30px;
   margin-right: 30px;
 }
+@media screen and (max-width: 1024px) {
+  .result-popular {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
 /* RESULT */
 .result {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 65%;
+  width: 60%;
   background: #F2F2F2;
   border-radius: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .result {
+    width: 100%;
+    background: #fff;
+    border-radius: 0;
+  }
 }
 .result__title {
   width: 100%;
@@ -248,21 +375,33 @@ a {
 }
 .result__thumb {
   cursor: pointer;
-  width: 280px;
+  width: 260px;
   height: 190px;
   background: #fff;
   margin: 20px 10px;
   border-radius: 20px;
   box-shadow: 2px 2px 8px 0px #00000082;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width: 1024px) {
+  .result__thumb {
+    width: 45%;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .result__thumb {
+    width: 80%;
+    height: 200px;
+  }
 }
 .result__thumb:hover {
   animation: thumb 200ms ease-in-out both;
 }
 .result__thumb--pic {
-  width: 96%;
+  width: auto;
   height: 60%;
-  margin: 2%;
-  /* background: url("../img/hosting/small/auberge_la_cannebiere.jpg"); */
+  margin: 1%;
   background-size: cover;
   border-radius: 20px 20px 0 0;
 }
@@ -281,7 +420,7 @@ a {
   color: #0065FC;
 }
 .result__thumb--star--grey {
-  color: #F2F2F2;
+  color: #d9d9d9;
 }
 .result__txt {
   width: 100%;
@@ -291,13 +430,29 @@ a {
 
 /* POPULAR */
 .popular {
-  width: 30%;
+  width: 35%;
   background: #F2F2F2;
   border-radius: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .popular {
+    width: 100%;
+    border-radius: 0;
+  }
 }
 .popular__title {
   margin-left: 25px;
   font-size: 1.5em;
+}
+@media screen and (max-width: 1024px) {
+  .popular__title {
+    padding-left: 18%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .popular__title {
+    padding-left: 5%;
+  }
 }
 .popular__icon {
   float: right;
@@ -313,14 +468,24 @@ a {
   border-radius: 20px;
   box-shadow: 2px 2px 8px 0px #00000082;
 }
+@media screen and (max-width: 1024px) {
+  .popular__thumb {
+    width: 60%;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .popular__thumb {
+    width: 80%;
+  }
+}
 .popular__thumb:hover {
   animation: thumb 200ms ease-in-out both;
 }
 .popular__thumb--pic {
   width: 35%;
-  height: 96%;
+  height: auto;
   margin: 1%;
-  /* background: url("../img/hosting/small/hotel_le_soleil_du_matin.jpg"); */
   background-size: cover;
   border-radius: 20px 0 0 20px;
 }
@@ -342,7 +507,7 @@ a {
   color: #0065FC;
 }
 .popular__thumb__bloc--star--grey {
-  color: #F2F2F2;
+  color: #d9d9d9;
 }
 
 /* ACTIVITY */
@@ -351,13 +516,31 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 95%;
-  height: 500px;
+  height: auto;
   margin-left: 30px;
   margin-right: 30px;
   padding-top: 30px;
 }
+@media screen and (max-width: 1024px) {
+  .activity {
+    justify-content: space-around;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .activity__title {
   width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .activity__title {
+    padding-left: 5%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .activity__title {
+    padding-left: 10%;
+  }
 }
 .activity__thumb__medium {
   cursor: pointer;
@@ -367,17 +550,33 @@ a {
   overflow: hidden;
   box-shadow: 2px 2px 8px 0px #000000;
 }
+@media screen and (max-width: 1024px) {
+  .activity__thumb__medium {
+    width: 40%;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .activity__thumb__medium {
+    width: 80%;
+    height: 200px;
+  }
+}
 .activity__thumb__medium:hover {
   animation: thumb 200ms ease-in-out both;
 }
 .activity__thumb__medium--pic {
   width: 100%;
   height: 89%;
-  /* background: url("../img/activity/medium/vieux_port.jpg"); */
   background-size: cover;
 }
+@media screen and (max-width: 480px) {
+  .activity__thumb__medium--pic {
+    height: 76%;
+  }
+}
 .activity__thumb__medium--name {
-  margin: 11px 15px;
+  margin: 5px 15px;
   font-weight: bold;
 }
 .activity__bloc {
@@ -388,6 +587,17 @@ a {
   width: 22%;
   height: 400px;
 }
+@media screen and (max-width: 1024px) {
+  .activity__bloc {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .activity__bloc {
+    width: 80%;
+    height: auto;
+  }
+}
 .activity__thumb__small {
   cursor: pointer;
   height: 180px;
@@ -395,17 +605,22 @@ a {
   overflow: hidden;
   box-shadow: 2px 2px 8px 0px #000000;
 }
+@media screen and (max-width: 480px) {
+  .activity__thumb__small {
+    height: 200px;
+    margin-bottom: 40px;
+  }
+}
 .activity__thumb__small:hover {
   animation: thumb 200ms ease-in-out both;
 }
 .activity__thumb__small--pic {
   width: 100%;
   height: 76%;
-  /* background: url("../img/activity/small/ile_du_frioul.jpg"); */
   background-size: cover;
 }
 .activity__thumb__small--name {
-  margin: 11px 15px;
+  margin: 5px 15px;
   font-weight: bold;
 }
 
@@ -419,9 +634,19 @@ a {
   margin-top: 20px;
   background: #F2F2F2;
 }
+@media screen and (max-width: 480px) {
+  .footer {
+    height: auto;
+  }
+}
 .footer__bloc {
   width: 30%;
   padding-top: 40px;
+}
+@media screen and (max-width: 480px) {
+  .footer__bloc {
+    width: 90%;
+  }
 }
 .footer__bloc--title {
   font-weight: bold;

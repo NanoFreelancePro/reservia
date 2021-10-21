@@ -13,9 +13,9 @@
     <nav class="nav">
         <div class="nav__logo"></div>
         <ul class="nav__menu">
-            <a href="#result"><li class="nav__menu--btn">Hébergements</li></a>
-            <a href="#activity"><li class="nav__menu--btn">Activités</li></a>
-            <a href="#"><li class="nav__menu--btn">S'inscrire</li></a>
+            <li class="nav__menu--btn"><a id="btn-result" href="#result">Hébergements</a></li>
+            <li class="nav__menu--btn"><a id="btn-activity" href="#activity">Activités</a></li>
+            <li class="nav__menu--btn"><a id="btn-inscription" href="#">S'inscrire</a></li>
         </ul>
     </nav>
     <header>
@@ -26,7 +26,9 @@
             <div class="search__bar">
                 <div class="search__bar--icon"><i class="fas fa-map-marker-alt"></i></div>
                 <input class="search__bar--area" type="text" name="search__area" value="Marseille, France">
-                <button class="search__bar--btn">Rechercher</button>
+                <button class="search__bar--btn"><span class="comput">Rechercher</span><span class="mobile"><i class="fas fa-search"></i></span></button>
+                
+                
             </div>
         </div>
 <!-- FILTER -->
@@ -41,10 +43,10 @@
     </header>
 
 <!-- BLOC RESULT POPULAR -->
-    <section class="result-popular">
+    <div class="result-popular">
         <!-- RESULT -->
         <article id="result" class="result">
-            <h1 class="result__title">Hébergements à Marseille</h1>
+            <h2 class="result__title">Hébergements à Marseille</h2>
 
             <div class="result__thumb">
                 <div class="result__thumb--pic pic--1"></div>
@@ -124,7 +126,7 @@
 
         <!-- POPULAR -->
         <aside class="popular">
-            <h1 class="popular__title">Les plus populaires<span class="popular__icon"><i class="fas fa-chart-line"></i></span></h1>
+            <h2 class="popular__title">Les plus populaires<span class="popular__icon"><i class="fas fa-chart-line"></i></span></h2>
             
 
             <div class="popular__thumb">
@@ -166,11 +168,11 @@
                 </div>
             </div>
         </aside>
-    </section>
+    </div>
 
 <!-- ACTIVITY -->
     <section id="activity" class="activity">
-        <h1 class="activity__title">Activités à Marseille</h1>
+        <h2 class="activity__title">Activités à Marseille</h2>
 
         <div class="activity__thumb__medium">
             <div class="activity__thumb__medium--pic pic--10"></div>
@@ -190,7 +192,7 @@
 
         <div class="activity__thumb__medium">
             <div class="activity__thumb__medium--pic pic--13"></div>
-            <div class="activity__thumb__medium--name">Parc National des Calanques</div>
+            <div class="activity__thumb__medium--name">Parc National des Calanque</div>
         </div>
 
         <div class="activity__bloc">
@@ -232,6 +234,5 @@
         </div>
 
     </footer>
-    
 </body>
 </html>
