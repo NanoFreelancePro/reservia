@@ -1,0 +1,428 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+/* font-family: 'Raleway', sans-serif; */
+
+/* COLOR PAGE */
+$color-bg: #fff;
+$color-thumb: #fff;
+$color-bloc: #F2F2F2;
+$color-style-primary: #0065FC;
+$color-style-secondary: #DEEBFF;
+$color-txt: #000000;
+$size-title:1.5em;
+
+$insert-pic:(
+    01: url("../img/hosting/small/auberge_la_cannebiere.jpg")50% 50%,
+    02: url("../img/hosting/small/hotel_du_port.jpg") 50% 50%,
+    03: url("../img/hosting/small/hotel_les_mouettes.jpg") 50% 50%,
+    04: url("../img/hosting/small/hotel_de_la_mer.jpg")50% 50%,
+    05: url("../img/hosting/small/auberge_le_panier.jpg") 50% 50%,
+    06: url("../img/hosting/small/hotel_chez_amina.jpg") 50% 50%,
+    07: url("../img/hosting/small/hotel_le_soleil_du_matin.jpg") 50% 50%,
+    08: url("../img/hosting/small/au_coeur_de_l_eau_chambres_d_hotes.jpg") 50% 50%,
+    09: url("../img/hosting/small/hotel_tout_bleu_et_blanc.jpg") 50% 50%,
+    10: url("../img/activity/small/vieux_port.jpg") 50% 50%,
+    11: url("../img/activity/small/fort_de_pomegues.jpg") 50% 50%,
+    12: url("../img/activity/small/ile_du_frioul.jpg") 50% 50%,
+    13: url("../img/activity/small/parc_national_des_calanques.jpg") 50% 50%,
+    14: url("../img/activity/small/notre_dame_de_la_garde.jpg") 50% 50%,
+    15: url("../img/activity/small/parc_longchamp.jpg") 50% 50%,);
+@mixin insert-pic ($insert-pic){
+    @each $num,$url in $insert-pic {
+        &--#{$num}{
+            background: $url;
+        }
+    }
+}
+.pic{
+    @include insert-pic($insert-pic)
+}
+
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes thumb {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.05);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+ul{
+    padding-inline: 0;
+}
+li{
+    list-style: none;
+}
+
+a{
+    list-style: none;
+    text-decoration: none;
+    color: $color-txt;
+}
+
+
+/* NAV */
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    height: 83px;
+    &__logo{
+        position: absolute;
+        top: 10px;
+        left: 30px;
+        padding-right: 1px;
+        background: no-repeat url("../img/reservia_logo.png");
+        background-size: 100px 50px;
+        width: 100px;
+        height: 60px;
+    }
+    &__menu{
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap-reverse;
+        margin: 0;
+        text-align: center;
+        &--btn{
+            width: 200px;
+            height: 60px;
+            padding-top: 20px;
+            &:hover{
+            border-top: 3px solid $color-style-primary;
+            color: $color-style-primary;
+            font-weight: bold;
+            }
+        }
+    }
+}
+
+/* SEARCH*/
+
+.search{
+    margin: 20px 0;
+    margin-left: 30px;
+    &__title{
+        font-size: $size-title;
+    }
+    &__bar{
+        display: flex;
+        width: 600px;
+        height: 50px;
+        &--icon{
+            width: 50px;
+            padding-top: 14px;
+            text-align: center;
+            background: $color-bloc;
+            border-radius: 15px 0 0 15px;
+        }
+        &--area{
+            width: 210px;
+            padding-left: 20px;
+            border: 2px solid $color-bloc;
+            font-size: 1.2em;
+            font-weight: bold;
+            &:focus{
+                border-style: none;
+            }
+        }
+        &--btn{
+            width: 150px;
+            background: $color-style-primary;
+            color: $color-bg;
+            font-size: 1.2em;
+            border:0;
+            border-radius: 0 20px 20px 0;
+            &:hover{
+                background-color: lighten($color-style-primary, 10);
+                font-size: 1.22em;
+            }
+            &:active{
+                box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+            }
+        }
+    }
+}
+
+/* FILTER */
+.filter{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    margin-left: 30px;
+    font-size: 1em;
+    font-weight: bold;
+    &__title{  
+        width: 80px; 
+        padding-top: 18px;
+    }
+    &__btn{
+        cursor: pointer;
+        width: auto;
+        margin-right: 20px;
+        padding-right: 15px;
+        text-align: center;
+        border: 1px solid $color-bloc;
+        border-radius: 30px;
+        & i{
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 20px;
+            color: $color-style-primary;
+            padding: 15px;
+            background: $color-style-secondary;
+            border-radius: 50%;
+        }
+        &:hover{
+            background: $color-style-primary;
+            color: $color-bg;
+            border-radius: 0 40px ;  
+        }
+        &:active{
+            background: lighten($color-style-primary,10);
+        }
+        &:hover > i{
+            animation: rotate 1000ms 1;
+        }
+    }
+    &__txt{
+        width: 100%;
+        margin-top: 20px;
+        font-weight: lighter;
+        & i{
+            margin-right: 15px;
+            padding: 5px 9px;
+            color: $color-style-primary;
+            border: 1px solid $color-bloc;
+            border-radius: 50%;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+}
+
+/* RESULT POPULAR */
+.result-popular{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* RESULT */
+.result{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 65%;
+    background: $color-bloc;
+    border-radius: 40px;
+    &__title{
+        width: 100%;
+        margin-left: 45px;
+        font-size: $size-title;
+    }
+    &__thumb{
+        cursor: pointer;
+        width: 280px;
+        height: 190px;
+        background: $color-thumb;
+        margin: 20px 10px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 8px 0px #00000082;
+        &:hover{
+        animation: thumb 200ms ease-in-out both;
+        }
+        &--pic{
+            width: 96%;
+            height: 60%;
+            margin: 2%;
+            /* background: url("../img/hosting/small/auberge_la_cannebiere.jpg"); */
+            background-size: cover;
+            border-radius: 20px 20px 0 0;
+        }
+        &--name{
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        &--price{
+            margin-left: 15px;
+            font-size: 0.9em;
+        }
+        &--star{
+            margin-left: 15px;
+            margin-top: 7px;
+            font-size: 13px;
+            color: $color-style-primary;
+            &--grey{
+                color: $color-bloc;
+            }
+        }
+    }
+    &__txt{
+        width: 100%;
+        margin-left: 45px;
+        font-weight: bold;
+    }
+}
+
+/* POPULAR */
+.popular{
+    width: 30%;
+    background: $color-bloc;
+    border-radius: 40px;
+    &__title{
+        margin-left: 25px;
+        font-size: $size-title;
+    }
+    &__icon{
+        float: right;
+        margin-right: 30px;
+    }
+    &__thumb{
+        cursor: pointer;
+        display: flex;
+        width: 90%;
+        height: 150px;
+        margin: 40px auto;
+        background: $color-bg;
+        border-radius: 20px;
+        box-shadow: 2px 2px 8px 0px #00000082;
+        &:hover{
+            animation: thumb 200ms ease-in-out both;
+            }
+        &--pic{
+            width: 35%;
+            height: 96%;
+            margin: 1%;
+            /* background: url("../img/hosting/small/hotel_le_soleil_du_matin.jpg"); */
+            background-size: cover;
+            border-radius: 20px 0 0 20px;
+        }
+        &__bloc{
+            width: 60%;
+            &--name{
+                margin: 15px;
+                font-weight: bold;
+            }
+            &--price{
+                margin: 15px;
+                font-size: 0.9em;
+            }
+            &--star{
+                margin-left: 15px;
+                margin-top: 15px;
+                font-size: 13px;
+                color: $color-style-primary;
+                &--grey{
+                    color: $color-bloc;
+                }
+            }
+        }
+        
+    }
+}
+
+/* ACTIVITY */
+.activity{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 95%;
+    height: 500px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 30px;
+    &__title{
+        width: 100%;
+    }
+    &__thumb__medium{
+        cursor: pointer;
+        width: 22%;
+        height: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 2px 2px 8px 0px #000000;
+        &:hover{
+            animation: thumb 200ms ease-in-out both;
+            }
+        &--pic{
+            width: 100%;
+            height: 89%;
+            /* background: url("../img/activity/medium/vieux_port.jpg"); */
+            background-size: cover;
+        }
+        &--name{
+            margin: 11px 15px;
+            font-weight: bold;
+        }
+    }
+    &__bloc{  /* DEUX SMALL */
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 22%;
+        height: 400px;
+    }
+    &__thumb__small{
+        cursor: pointer;
+        height: 180px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 2px 2px 8px 0px #000000;
+        &:hover{
+            animation: thumb 200ms ease-in-out both;
+            }
+        &--pic{
+            width: 100%;
+            height: 76%;
+            /* background: url("../img/activity/small/ile_du_frioul.jpg"); */
+            background-size: cover;
+        }
+        &--name{
+            margin: 11px 15px;
+            font-weight: bold;
+        }
+    }
+}
+
+/* FOOTER */
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 210px;
+    margin-top: 20px;
+    background: $color-bloc;
+    &__bloc{
+        width: 30%;
+        padding-top: 40px;
+        &--title{
+            font-weight: bold;
+        }
+        &__menu{
+            &--btn{
+                cursor: pointer;
+                padding: 8px 0;
+            }
+        }
+    }
+}

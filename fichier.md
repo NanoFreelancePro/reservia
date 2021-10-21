@@ -36,3 +36,13 @@ L'objectif est d'intégrer la maquette d'un site de planification de vacance nom
 - Autoprefixer.
 - Références HTML et CSS (MDN).
 - Bcp internet pour revoir cours et aller chercher les infos.
+
+### Horaires :
+
+Mercredi 20 octobre
+- 17H15 à 20H15 :   03H00 HTML complet et SCSS NAV SEARCH
+- 22H10 à 22H55 :   00H45 SCSS FILTER RESULT POP
+- TOTAL :           03H45
+
+Jeudi 21 octobre
+- 00H00 à 04H00 :   04H00 SCSS complet avec animations, reste media quiery à faire.
