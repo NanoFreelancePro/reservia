@@ -29,10 +29,11 @@
                 border-right: 0;
             }
             &:focus{
-                border-style: none;
+                outline: none;
             }
         }
         &--btn{
+            cursor: pointer;
             width: 150px;
             background: $color-style-primary;
             color: $color-bg;

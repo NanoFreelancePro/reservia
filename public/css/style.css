@@ -39,12 +39,19 @@ li {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+a:link {
+  color: #000000;
 }
 a:visited {
   color: #000000;
 }
 a:hover {
   color: #0065FC;
+}
+a:active {
+  color: #3083ff;
 }
 
 /* IMG du site */
@@ -173,7 +180,6 @@ a:hover {
   width: 200px;
   height: 60px;
   padding-top: 20px;
-  color: #000000;
 }
 @media screen and (max-width: 1024px) {
   .nav__menu--btn {
@@ -183,8 +189,10 @@ a:hover {
 }
 .nav__menu--btn:hover {
   border-top: 3px solid #0065FC;
-  color: #0065FC;
   font-weight: bold;
+}
+.nav__menu--btn:hover > a {
+  color: #0065FC;
 }
 @media screen and (max-width: 1024px) {
   .nav__menu--btn:hover {
@@ -230,9 +238,10 @@ a:hover {
   }
 }
 .search__bar--area:focus {
-  border-style: none;
+  outline: none;
 }
 .search__bar--btn {
+  cursor: pointer;
   width: 150px;
   background: #0065FC;
   color: #fff;
@@ -652,7 +661,6 @@ a:hover {
   font-weight: bold;
 }
 .footer__bloc__menu--btn {
-  cursor: pointer;
   padding: 8px 0;
 }
 

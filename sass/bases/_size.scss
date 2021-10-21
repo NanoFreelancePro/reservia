@@ -10,12 +10,19 @@ li{
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
+    cursor: pointer;
+    &:link{
+        color: $color-txt;
+    }
     &:visited{
         color: $color-txt;
     }
     &:hover{
         color: $color-style-primary;
+    }
+    &:active{
+        color: lighten($color-style-primary,10);
     }
 }

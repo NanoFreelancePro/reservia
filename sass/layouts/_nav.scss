@@ -66,18 +66,19 @@
             width: 200px;
             height: 60px;
             padding-top: 20px;
-            color: $color-txt;
             @media screen and (max-width: 1024px) {
                 width: 100%;
                 text-align: center;    
             }
             &:hover{
             border-top: 3px solid $color-style-primary;
-            color: $color-style-primary;
             font-weight: bold;
+            & > a{
+                color: $color-style-primary;
+            }
             @media screen and (max-width: 1024px) {
                 border-top: 0;
-            }
+            }          
             }
         }
     }
